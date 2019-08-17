@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour
 
     Rigidbody2D rb2d;
 
+    public float deathTime = 5f;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -26,6 +28,14 @@ public class Bullet : MonoBehaviour
     
     void Update()
     {
+        if (deathTime > 0)
+        {
+            deathTime -= Time.deltaTime;
+        }
+        else {
+            Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
         damage = !onFire ? baseDamage : baseDamage + fireDamage;
     }
     /*

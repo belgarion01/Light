@@ -10,11 +10,13 @@ public class Ennemy : MonoBehaviour, IHitable
     public UnityEvent HitEvent;
     Animator anim;
 
+    public float hitTime;
+
 
     public void OnHit(int damage)
     {
         HitEvent.Invoke();
-        TakeDamage(damage);
+        StartCoroutine(TakeDamage(damage));
     }
 
     // Start is called before the first frame update
@@ -30,11 +32,14 @@ public class Ennemy : MonoBehaviour, IHitable
 
     }
 
-    void TakeDamage(int damage) {
+    IEnumerator TakeDamage(int damage) {
         health -= damage;
-        anim.SetTrigger("Hit");
+        GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 1);
+        Debug.Log(GetComponent<SpriteRenderer>().material.GetFloat("_Hit"));
         Debug.Log(gameObject.name + " has taken " + damage + " damage !");
         if (health <= 0) Die();
+        yield return new WaitForSeconds(hitTime);
+        GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 0);
     }
 
     void Die() {
