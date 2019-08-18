@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    Animator anim;
+    public Animator anim;
 
     float hAxis;
 
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform groundCheckPosition; 
     bool grounded;
+    bool wasGrounded;
     public float groundCheckRadius;
     public LayerMask m_Ground;
 
@@ -31,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     void CheckForCollisions() {
         grounded = Physics2D.OverlapCircle(groundCheckPosition.position, groundCheckRadius, m_Ground);
+        anim.SetBool("Grounded", grounded);
+        //wasGrounded = grounded;
     }
 
     void Move() {
@@ -58,7 +60,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if ((isRight && mousePosition.x < transform.position.x) || (!isRight && mousePosition.x > transform.position.x)) Flip();
-
+        if (targetVelocity.x == 0) anim.SetBool("isMoving", false);
+        else anim.SetBool("isMoving", true);
     }
 
     void HandleJump() {
