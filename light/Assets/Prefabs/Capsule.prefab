@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a54284fb0706003418e29f7a7346fa7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   fireDamage: 2
   fireVFX: {fileID: 2074406512590872544}
   onFire: 0
+  deathTime: 5
 --- !u!70 &1457043273643119396
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

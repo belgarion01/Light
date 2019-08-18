@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 646225914033362870}
   - component: {fileID: 646225914033362873}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: BulletDestruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4766,7 +4766,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f86fb1d42709e154dadab578e9bcd9d7, type: 2}
+  - {fileID: 2100000, guid: 0d4950cfb4c160c448420dec75674fe5, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

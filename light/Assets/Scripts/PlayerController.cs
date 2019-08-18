@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb2d;
+    Animator anim;
 
     float hAxis;
 
@@ -21,12 +22,16 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask m_Ground;
 
+    [HideInInspector]
+    public bool isRight = true;
+
     public bool gizmos;
     
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -49,8 +54,11 @@ public class PlayerController : MonoBehaviour
         Vector2 targetVelocity = new Vector2();
         targetVelocity.x = hAxis * movementSpeed * Time.fixedDeltaTime;
         targetVelocity.y = rb2d.velocity.y;
-
         rb2d.velocity = targetVelocity;
+
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if ((isRight && mousePosition.x < transform.position.x) || (!isRight && mousePosition.x > transform.position.x)) Flip();
+
     }
 
     void HandleJump() {
@@ -73,6 +81,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    void Flip() {
+        Vector3 targetScale = transform.localScale;
+        targetScale.x *= -1;
+        transform.localScale = targetScale;
+        isRight = !isRight;
     }
 
     private void OnDrawGizmosSelected()
