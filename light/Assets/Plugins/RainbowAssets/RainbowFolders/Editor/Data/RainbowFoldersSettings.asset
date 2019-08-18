@@ -292,3 +292,12 @@ MonoBehaviour:
     Background: {fileID: 2800000, guid: e90ab36ab75772f48bddb90aa64b46ba, type: 3}
     IsBackgroundRecursive: 0
     IsBackgroundCustom: 0
+  - Type: 1
+    Key: Assets/Animations/Bat
+    SmallIcon: {fileID: 2800000, guid: 6afa87a5a70f8e54a82e85637cec0904, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b84c63ef648173140b8fa6c05aef2768, type: 3}
+    IsIconRecursive: 0
+    IsIconCustom: 0
+    Background: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsBackgroundCustom: 0
