@@ -44,6 +44,9 @@ TagManager:
   - name: background
     uniqueID: 15370823
     locked: 0
+  - name: Liaison
+    uniqueID: 943300785
+    locked: 0
   - name: cabane
     uniqueID: 1577813965
     locked: 0
@@ -52,6 +55,9 @@ TagManager:
     locked: 0
   - name: grass
     uniqueID: 1427132065
+    locked: 0
+  - name: sand
+    uniqueID: 715702059
     locked: 0
   - name: fire
     uniqueID: 2745743401
