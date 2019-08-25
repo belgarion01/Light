@@ -10,7 +10,7 @@ public class Ennemy : MonoBehaviour, IHitable
     public UnityEvent HitEvent;
     Animator anim;
 
-    public float hitTime;
+    public float hitTime = 0.05f;
 
 
     public void OnHit(int damage)
@@ -34,12 +34,19 @@ public class Ennemy : MonoBehaviour, IHitable
 
     IEnumerator TakeDamage(int damage) {
         health -= damage;
-        GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 1);
-        Debug.Log(GetComponent<SpriteRenderer>().material.GetFloat("_Hit"));
+        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sprite in sprites) {
+            sprite.material.SetFloat("_Hit", 1);
+        }
+        //GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 1);
         Debug.Log(gameObject.name + " has taken " + damage + " damage !");
         if (health <= 0) Die();
         yield return new WaitForSeconds(hitTime);
-        GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 0);
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.material.SetFloat("_Hit", 0);
+        }
+        //GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 0);
     }
 
     void Die() {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -26,12 +27,21 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isRight = true;
 
+    public UnityEvent OnFoot;
+    public UnityEvent OnJump;
+
+    AudioSource source;
+
+    public SoundAsset walkSound;
+    public SoundAsset jumpSound;
+
     public bool gizmos;
     
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -84,6 +94,14 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    public void PlayWalkSound() {
+        walkSound.Play(source);
+    }
+
+    public void PlayJumpSound() {
+        jumpSound.Play(source);
     }
 
     void Flip() {
