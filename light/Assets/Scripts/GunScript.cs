@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GunScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GunScript : MonoBehaviour
     private PlayerController pController;
 
     public GameObject Bullet;
+
+    public UnityEvent Shoot;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class GunScript : MonoBehaviour
         transform.rotation = pController.isRight ? Quaternion.Euler(0, 0, rotZ+rotationOffset) : Quaternion.Euler(0, 0, rotZ + rotationOffset+180f);
 
         if (Input.GetMouseButtonDown(0)) {
+            Shoot.Invoke();
             Vector3 targetRotation = transform.eulerAngles;
             targetRotation.z += 90f;
             GameObject bul = Instantiate(Bullet, pointOfGun.position, Quaternion.Euler(targetRotation));
