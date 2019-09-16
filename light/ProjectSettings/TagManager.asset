@@ -59,8 +59,14 @@ TagManager:
   - name: sand
     uniqueID: 715702059
     locked: 0
+  - name: Landscape
+    uniqueID: 2319199445
+    locked: 0
   - name: fire
     uniqueID: 2745743401
+    locked: 0
+  - name: Platform
+    uniqueID: 221882687
     locked: 0
   - name: player
     uniqueID: 2935482439
