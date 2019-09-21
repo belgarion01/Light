@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  speed: 10
+  speed: 20
   VFX_Destroyed: {fileID: 646225914033362870, guid: acdca8fff15717e42a9fc7e3929a15b8,
     type: 3}
   baseDamage: 1

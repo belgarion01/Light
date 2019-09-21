@@ -38,15 +38,6 @@ public class Bullet : MonoBehaviour
         }
         damage = !onFire ? baseDamage : baseDamage + fireDamage;
     }
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        IHitable hit = collision.GetComponent<IHitable>();
-        if (hit != null) hit.OnHit(damage);
-        Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
-    */
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

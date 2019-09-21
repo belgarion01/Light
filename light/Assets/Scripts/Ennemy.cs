@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Ennemy : MonoBehaviour, IHitable
+
+public class Ennemy : SerializedMonoBehaviour, IHitable
 {
+    [BoxGroup("Ennemy Stats")]
     public float maxHealth;
     private float health;
     public UnityEvent HitEvent;
@@ -19,26 +22,20 @@ public class Ennemy : MonoBehaviour, IHitable
         StartCoroutine(TakeDamage(damage));
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         anim = GetComponent<Animator>();
         health = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator TakeDamage(int damage) {
+        Debug.Log("EH - "+health);
         health -= damage;
+        Debug.Log(damage);
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sprite in sprites) {
             sprite.material.SetFloat("_Hit", 1);
         }
-        //GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 1);
         Debug.Log(gameObject.name + " has taken " + damage + " damage !");
         if (health <= 0) Die();
         yield return new WaitForSeconds(hitTime);
@@ -46,7 +43,6 @@ public class Ennemy : MonoBehaviour, IHitable
         {
             sprite.material.SetFloat("_Hit", 0);
         }
-        //GetComponent<SpriteRenderer>().material.SetFloat("_Hit", 0);
     }
 
     void Die() {
