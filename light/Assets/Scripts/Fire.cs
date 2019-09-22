@@ -6,8 +6,8 @@ public class Fire : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Bullet bullet = collision.GetComponent<Bullet>();
-        Debug.Log("YES");
-        if (bullet != null) bullet.SetOnFire(true);
+        
+        IFire obj = collision.GetComponent<IFire>();
+        if (obj != null) obj.SetFire(true);
     }
 }

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IFire
 {
     public Vector2 direction = Vector2.zero;
     public float speed;
     public ParticleSystem VFX_Destroyed;
+    public ParticleSystem VFX_OnFiredUp;
     public int baseDamage = 1;
     public int fireDamage = 2;
     int damage;
@@ -18,6 +19,7 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rb2d;
 
     public float deathTime = 5f;
+    public float test;
 
     void Start()
     {
@@ -33,7 +35,7 @@ public class Bullet : MonoBehaviour
             deathTime -= Time.deltaTime;
         }
         else {
-            Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
+            //Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         damage = !onFire ? baseDamage : baseDamage + fireDamage;
@@ -47,8 +49,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SetOnFire(bool fire) {
-        onFire = fire;
+    public void SetFire(bool value)
+    {
+        if (value)
+        {
+            ParticleSystem vfx = Instantiate(VFX_OnFiredUp, transform.position+(-transform.up*test), Quaternion.identity);
+            Destroy(vfx, 2f);
+        }
+        onFire = value;
         fireVFX.SetActive(onFire);
     }
 }

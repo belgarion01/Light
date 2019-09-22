@@ -17,6 +17,7 @@ public class Ennemy_Flying : Ennemy
     public List<Vector3> waypoints = new List<Vector3>(1);
     int targetWaypointIndex = 1;
     public enum State { Standing, Walking, Dying }
+    public bool facingRight = false;
 
     public override void Start()
     {
@@ -31,10 +32,10 @@ public class Ennemy_Flying : Ennemy
         Vector3 end = destination;
         Vector3 pos = origin;
         float percentage = 0;
-        //float test = Mathf.InverseLerp(0f, 
+        if (((end - origin).x < 0&&facingRight)|| ((end - origin).x > 0 && !facingRight))
+            Flip();
         while (Vector3.Distance(pos, end) > 0.1f) {
             pos = Vector3.MoveTowards(transform.position, end, speed * Time.deltaTime);
-            //pos = Vector3.Lerp(origin, end, percentage);
             transform.position = pos;
             percentage += speed * Time.deltaTime / 10f;
             yield return new WaitForFixedUpdate();
@@ -55,6 +56,13 @@ public class Ennemy_Flying : Ennemy
 
     public void Activate() {
         StartCoroutine(WalkingTo(GetTargetWaypoint()));
+    }
+
+    public void Flip() {
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+        facingRight = !facingRight;
     }
 
     Vector3 GetTargetWaypoint() {
