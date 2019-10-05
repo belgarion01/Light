@@ -12,13 +12,16 @@ public class Ennemy : SerializedMonoBehaviour, IHitable
     private float health;
     public UnityEvent HitEvent;
     Animator anim;
+    public float dieSpeed = 2.5f;
+    bool die = false;
 
     public float hitTime = 0.05f;
 
 
     public void OnHit(int damage, bool onFire)
     {
-        HitEvent.Invoke();
+        if (damage <= 0) return;
+        HitEvent?.Invoke();
         StartCoroutine(TakeDamage(damage));
     }
 
@@ -44,15 +47,35 @@ public class Ennemy : SerializedMonoBehaviour, IHitable
     }
 
     void Die() {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        if(!die)StartCoroutine(DieAction());
     }
 
     IEnumerator DieAction() {
+        die = true;
+        Collider2D coll = GetComponent<Collider2D>();
+        if (coll != null) coll.enabled = false;
+        foreach (Transform child in transform)
+        {
+            Collider2D col = child.GetComponent<Collider2D>();
+            if (col != null) col.enabled = false;
+        }
         float value = 0f;
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer sprite in sprites) {
-            //sprite.material.SetFloat(
-            yield return new WaitForFixedUpdate();
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.material.SetFloat("_Die", 1);
         }
+        while (value < 1)
+        {
+            foreach (SpriteRenderer sprite in sprites)
+            {
+                sprite.material.SetFloat("_DiePercent", value);
+                value += Time.deltaTime*dieSpeed;
+                yield return new WaitForFixedUpdate();
+            }
+        }
+        Destroy(gameObject);
+        yield return null;
     }
 }

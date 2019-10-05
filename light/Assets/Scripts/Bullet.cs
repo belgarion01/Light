@@ -49,6 +49,14 @@ public class Bullet : MonoBehaviour, IFire
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //IHitable hit = collision.gameObject.GetComponent<IHitable>();
+        //if (hit != null) hit.OnHit(damage, onFire);
+        //Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
+        //Destroy(gameObject);
+    }
+
     public void SetFire(bool value)
     {
         if (value)
