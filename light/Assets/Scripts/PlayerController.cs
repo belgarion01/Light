@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb2d;
     public Animator anim;
+    SpriteRenderer renderer;
 
     float hAxis;
 
@@ -35,13 +36,18 @@ public class PlayerController : MonoBehaviour
     public SoundAsset walkSound;
     public SoundAsset jumpSound;
 
+    bool invulnerable = false;
+
     public bool gizmos;
-    
+    public float invulnerableTime;
+    int health = 5;
+
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -49,6 +55,7 @@ public class PlayerController : MonoBehaviour
         hAxis = Input.GetAxisRaw("Horizontal");
         HandleJump();
         CheckForCollisions();
+        renderer.material.SetFloat("_Hit", invulnerable ? 1f : 0f);
     }
 
     private void FixedUpdate()
@@ -116,5 +123,35 @@ public class PlayerController : MonoBehaviour
         if (gizmos) {
             Gizmos.DrawWireSphere(groundCheckPosition.position, groundCheckRadius);
         }
+    }
+
+    public void TakeDamageAction() {
+        if (invulnerable) return;
+        Debug.Log("Toucher");
+        StartCoroutine(TakeDamage(1));
+    }
+
+    IEnumerator TakeDamage(int damage)
+    {
+        health -= damage;
+        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+        invulnerable = true;
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.material.SetFloat("_Hit", 1);
+        }
+        Debug.Log(gameObject.name + " has taken " + damage + " damage !");
+        if (health <= 0) Die();
+        yield return new WaitForSeconds(invulnerableTime);
+
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.material.SetFloat("_Hit", 0);
+        }
+        invulnerable = false;
+    }
+
+    public void Die() {
+        Debug.Log("T'es mort");
     }
 }

@@ -18,6 +18,7 @@ public class Ennemy_Flying : Ennemy
     int targetWaypointIndex = 1;
     public enum State { Standing, Walking, Dying }
     public bool facingRight = false;
+    
 
     public override void Start()
     {
@@ -83,6 +84,14 @@ public class Ennemy_Flying : Ennemy
         waypoints = new List<Vector3>();
         waypoints.Add(transform.position);
         //waypoints[0] = transform.position;    
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerController player = collision.GetComponent<PlayerController>();
+        if (player != null) {
+            player.TakeDamageAction();
+        }
     }
 }
 

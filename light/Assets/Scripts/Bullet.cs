@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour, IFire
             //Instantiate(VFX_Destroyed, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        damage = !onFire ? baseDamage : baseDamage + fireDamage;
+        damage = !onFire ? baseDamage : fireDamage;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

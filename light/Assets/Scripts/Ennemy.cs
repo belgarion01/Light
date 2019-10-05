@@ -29,9 +29,7 @@ public class Ennemy : SerializedMonoBehaviour, IHitable
     }
 
     IEnumerator TakeDamage(int damage) {
-        Debug.Log("EH - "+health);
         health -= damage;
-        Debug.Log(damage);
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sprite in sprites) {
             sprite.material.SetFloat("_Hit", 1);

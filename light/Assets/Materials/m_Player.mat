@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ennemy_Shader
-  m_Shader: {fileID: -6465566751694194690, guid: f9e483a9c9b421e43a12235f81624933,
+  m_Name: m_Player
+  m_Shader: {fileID: -6465566751694194690, guid: ba266f47368a12949b73bcf34229ec2d,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -21,17 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainText:
         m_Texture: {fileID: 2800000, guid: 457b131983caf9146ad8f5f1e20af1e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_104A8B92: 0
-    - _Die: 1
-    - _DiePercent: 0.479
+    - Vector1_7FAFF943: 30
+    - _BlinkSpeed: 30
     - _Hit: 0
-    - _Hit_Value: 0
     m_Colors: []
