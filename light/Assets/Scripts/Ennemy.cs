@@ -16,7 +16,7 @@ public class Ennemy : SerializedMonoBehaviour, IHitable
     public float hitTime = 0.05f;
 
 
-    public void OnHit(int damage)
+    public void OnHit(int damage, bool onFire)
     {
         HitEvent.Invoke();
         StartCoroutine(TakeDamage(damage));
@@ -45,5 +45,14 @@ public class Ennemy : SerializedMonoBehaviour, IHitable
 
     void Die() {
         Destroy(gameObject);
+    }
+
+    IEnumerator DieAction() {
+        float value = 0f;
+        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sprite in sprites) {
+            //sprite.material.SetFloat(
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

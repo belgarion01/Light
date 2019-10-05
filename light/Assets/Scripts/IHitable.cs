@@ -7,5 +7,5 @@ using UnityEngine.Events;
 
 public interface IHitable
 {
-    void OnHit(int damage);
+    void OnHit(int damage, bool onFire);
 }
