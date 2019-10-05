@@ -27,7 +27,10 @@ public class Fire : MonoBehaviour
         else
         {
             Bullet bullet = collision.GetComponent<Bullet>();
-            if (bullet.onFire) SetActive(true);
+            if (bullet != null)
+            {
+                if (bullet.onFire) SetActive(true);
+            }
         }
     }
 

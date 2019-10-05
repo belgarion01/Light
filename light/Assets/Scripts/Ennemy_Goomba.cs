@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Ennemy_Goomba : Ennemy
 {
-    Rigidbody2D rb2d;
-
-    private void Awake()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.TakeDamageAction();
+        }
     }
 }

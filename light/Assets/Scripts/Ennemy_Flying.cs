@@ -18,6 +18,7 @@ public class Ennemy_Flying : Ennemy
     int targetWaypointIndex = 1;
     public enum State { Standing, Walking, Dying }
     public bool facingRight = false;
+    public bool turn = true;
     
 
     public override void Start()
@@ -26,6 +27,7 @@ public class Ennemy_Flying : Ennemy
         waypoints[0] = transform.position;
         targetWaypointIndex = 1;
         Activate();
+        Debug.Log(gameObject.name + " : "+waypoints[1]);
     }
 
     IEnumerator WalkingTo(Vector3 destination) {
@@ -60,6 +62,7 @@ public class Ennemy_Flying : Ennemy
     }
 
     public void Flip() {
+        if (!turn) return;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
@@ -80,16 +83,24 @@ public class Ennemy_Flying : Ennemy
 
     private void Reset()
     {
-        Debug.Log("RESET");
-        waypoints = new List<Vector3>();
+        waypoints = new List<Vector3>(1);
         waypoints.Add(transform.position);
         //waypoints[0] = transform.position;    
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    PlayerController player = collision.GetComponent<PlayerController>();
+    //    if (player != null) {
+    //        player.TakeDamageAction();
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerController player = collision.GetComponent<PlayerController>();
-        if (player != null) {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
             player.TakeDamageAction();
         }
     }
