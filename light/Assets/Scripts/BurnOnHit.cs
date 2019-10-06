@@ -29,7 +29,6 @@ public class BurnOnHit : FireHitObject
             value += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log(value);
         Destroy(gameObject);
     }
 }

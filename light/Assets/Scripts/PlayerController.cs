@@ -152,6 +152,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Die() {
-        Debug.Log("T'es mort");
+        FindObjectOfType<GameManager>().ShowDeathMenu(true);
     }
 }

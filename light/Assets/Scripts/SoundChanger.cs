@@ -9,7 +9,7 @@ public class SoundChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player")&&!IsSame(source.clip, sound))
         {
             SetClip(sound);
             source.Play();
@@ -21,5 +21,10 @@ public class SoundChanger : MonoBehaviour
         source.clip = s.clip;
         source.volume = s.volume;
         source.pitch = s.pitch;
+    }
+
+    bool IsSame(AudioClip clip, SoundAsset asset) {
+        if (clip == asset.clip) return true;
+        else return false;
     }
 }

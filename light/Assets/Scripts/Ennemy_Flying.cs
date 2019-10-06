@@ -27,7 +27,6 @@ public class Ennemy_Flying : Ennemy
         waypoints[0] = transform.position;
         targetWaypointIndex = 1;
         Activate();
-        Debug.Log(gameObject.name + " : "+waypoints[1]);
     }
 
     IEnumerator WalkingTo(Vector3 destination) {
