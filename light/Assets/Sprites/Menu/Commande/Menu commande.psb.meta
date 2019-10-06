@@ -1,0 +1,609 @@
+fileFormatVersion: 2
+guid: b257914414c63d645aecf42f5eb9708c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Bouton_exit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3947
+      y: 729
+      width: 129
+      height: 125
+    spriteID: cdd87239104479d4c867c93c287b03ae
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1169, y: 390}
+  - name: 'Retour  '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3707
+      y: 617
+      width: 231
+      height: 85
+    spriteID: fe60106909224114e9387efa98091d76
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 984, y: 368}
+  - name: Calque 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4049
+      y: 617
+      width: 0
+      height: 0
+    spriteID: 55a9ecb9cfbbef444aba27151208e760
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 849, y: -1183}
+  - name: Calque 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 4
+      width: 487
+      height: 717
+    spriteID: f9c150b94c6f052468f2d22f471a1938
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1295, y: -514}
+  - name: 'Espace '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 1393
+      width: 749
+      height: 126
+    spriteID: cb7dee730018fc84c801371ffc37e7c3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2605, y: 771}
+  - name: Ellipse 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 729
+      width: 461
+      height: 656
+    spriteID: 9fd79fd75e18a0b4db699f730cd2694e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1046, y: 148}
+  - name: Calque 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3620
+      width: 1825
+      height: 917
+    spriteID: 032efa4c1b3b45a49a2da98c8fd9bf2e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -396, y: 3237}
+  - name: 'Tire  '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3946
+      y: 617
+      width: 95
+      height: 66
+    spriteID: dbf17ea9c8f0e6142bcfbd2d684edc1a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1887, y: -722}
+  - name: 'Saut '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 1527
+      width: 179
+      height: 95
+    spriteID: 17f6ae85173f605439a8532dfd49ddf6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1961, y: 1163}
+  - name: Gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3681
+      y: 1241
+      width: 292
+      height: 95
+    spriteID: 986520e81e6df58428212dfce5bf558d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3436, y: -29}
+  - name: Droite
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3707
+      y: 516
+      width: 219
+      height: 93
+    spriteID: 2ba4d6de602ac2d4c8ae61bdf14cbed6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2204, y: -764}
+  - name: 'A '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3681
+      y: 729
+      width: 258
+      height: 248
+    spriteID: 99eb410ab2659164f96e6c2debd42ffc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3078, y: -155}
+  - name: 'D '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3681
+      y: 985
+      width: 258
+      height: 248
+    spriteID: dd035be19937047489f8d6f65103816b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2580, y: 101}
+  - name: 'S '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3707
+      y: 4
+      width: 258
+      height: 248
+    spriteID: 1141141dae1bcdc48bf7ab8f1fda8db7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2855, y: -880}
+  - name: 'W '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3707
+      y: 260
+      width: 258
+      height: 248
+    spriteID: 7534332bb35340147a2de7f37848e2a1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2855, y: -864}
+  - name: Fond
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3200
+      height: 1800
+    spriteID: 2f2d92029f68e5a41a3a6194ca2affdc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: "Arri\xE8re-plan"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1812
+      width: 3200
+      height: 1800
+    spriteID: 5ae758a916717514ab478a20ae1c4a57
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1812}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 3200, y: 1800}
+  paperDollMode: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Bouton_exit
+    spriteName: Bouton_exit
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cdd87239104479d4c867c93c287b03ae
+    layerID: 16
+    mosaicPosition: {x: 3947, y: 729}
+  - name: 'Retour  '
+    spriteName: 'Retour  '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fe60106909224114e9387efa98091d76
+    layerID: 15
+    mosaicPosition: {x: 3707, y: 617}
+  - name: Calque 3
+    spriteName: Calque 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 55a9ecb9cfbbef444aba27151208e760
+    layerID: 14
+    mosaicPosition: {x: 4049, y: 617}
+  - name: Calque 2
+    spriteName: Calque 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9c150b94c6f052468f2d22f471a1938
+    layerID: 13
+    mosaicPosition: {x: 3212, y: 4}
+  - name: 'Espace '
+    spriteName: 'Espace '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cb7dee730018fc84c801371ffc37e7c3
+    layerID: 12
+    mosaicPosition: {x: 3212, y: 1393}
+  - name: Ellipse 1
+    spriteName: Ellipse 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9fd79fd75e18a0b4db699f730cd2694e
+    layerID: 11
+    mosaicPosition: {x: 3212, y: 729}
+  - name: Calque 1
+    spriteName: Calque 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 032efa4c1b3b45a49a2da98c8fd9bf2e
+    layerID: 10
+    mosaicPosition: {x: 4, y: 3620}
+  - name: 'Tire  '
+    spriteName: 'Tire  '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dbf17ea9c8f0e6142bcfbd2d684edc1a
+    layerID: 9
+    mosaicPosition: {x: 3946, y: 617}
+  - name: 'Saut '
+    spriteName: 'Saut '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 17f6ae85173f605439a8532dfd49ddf6
+    layerID: 8
+    mosaicPosition: {x: 3212, y: 1527}
+  - name: Gauche
+    spriteName: Gauche
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 986520e81e6df58428212dfce5bf558d
+    layerID: 7
+    mosaicPosition: {x: 3681, y: 1241}
+  - name: Droite
+    spriteName: Droite
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2ba4d6de602ac2d4c8ae61bdf14cbed6
+    layerID: 6
+    mosaicPosition: {x: 3707, y: 516}
+  - name: 'A '
+    spriteName: 'A '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 99eb410ab2659164f96e6c2debd42ffc
+    layerID: 5
+    mosaicPosition: {x: 3681, y: 729}
+  - name: 'D '
+    spriteName: 'D '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dd035be19937047489f8d6f65103816b
+    layerID: 4
+    mosaicPosition: {x: 3681, y: 985}
+  - name: 'S '
+    spriteName: 'S '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1141141dae1bcdc48bf7ab8f1fda8db7
+    layerID: 3
+    mosaicPosition: {x: 3707, y: 4}
+  - name: 'W '
+    spriteName: 'W '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7534332bb35340147a2de7f37848e2a1
+    layerID: 2
+    mosaicPosition: {x: 3707, y: 260}
+  - name: Fond
+    spriteName: Fond
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2f2d92029f68e5a41a3a6194ca2affdc
+    layerID: 17
+    mosaicPosition: {x: 4, y: 4}
+  - name: "Arri\xE8re-plan"
+    spriteName: "Arri\xE8re-plan"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5ae758a916717514ab478a20ae1c4a57
+    layerID: 1
+    mosaicPosition: {x: 4, y: 1812}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  boneGOs: []
+  generateGOHierarchy: 0
+  textureAssetName: Menu commande
+  prefabAssetName: Menu commande_GO
+  spriteLibAssetName: 
