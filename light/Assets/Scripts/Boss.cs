@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour, IHitable
 {
@@ -32,6 +33,7 @@ public class Boss : MonoBehaviour, IHitable
     public Vector3 boxSize;
 
     private Animator anim;
+    bool dead = false;
 
     public void BeginBoss() {
         OnBossBegin?.Invoke();
@@ -60,7 +62,7 @@ public class Boss : MonoBehaviour, IHitable
         }
 
         if (Input.GetKeyDown(KeyCode.P)) {
-            StartCoroutine(FallingBlocks());
+            Die();
         }
 
         if (currentPhase == Phase.Phase1 && health < 40f) {
@@ -189,7 +191,7 @@ public class Boss : MonoBehaviour, IHitable
             sprite.material.SetFloat("_Hit", 1);
         }
 
-        //if (health <= 0) Die();
+        if (health <= 0) Die();
         yield return new WaitForSeconds(0.05f);
         foreach (SpriteRenderer sprite in sprites)
         {
@@ -211,5 +213,15 @@ public class Boss : MonoBehaviour, IHitable
         projSpeed *= 1.5f;
         currentTime = 0f;
         currentPhase = Phase.Phase3;
+    }
+
+    void Die() {
+        if (dead) return;
+        anim.SetTrigger("Death");
+        dead = true;
+    }
+
+    public void Destr() {
+        SceneManager.LoadScene(2);
     }
 }
