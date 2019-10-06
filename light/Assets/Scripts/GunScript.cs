@@ -20,9 +20,9 @@ public class GunScript : MonoBehaviour
         pController = FindObjectOfType<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0) return;
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         Vector3 direction = new Vector3(difference.x, difference.y, 0f).normalized;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;

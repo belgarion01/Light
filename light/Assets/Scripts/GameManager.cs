@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
     public Checkpoint spawn;
+    private bool dead = false;
+    private bool pause = false;
 
     public GameObject DeathCanvas;
+    public GameObject PauseCanvas;
 
     private void Start()
     {
@@ -30,12 +33,25 @@ public class GameManager : MonoBehaviour
         {
             ShowDeathMenu(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu();
+        }
     }
 
     public void ShowDeathMenu(bool value) {
         DeathCanvas.SetActive(value);
         Pause(value);
         player.SetActive(false);
+        dead = true;
+    }
+
+    public void PauseMenu() {
+        if (dead) return;
+        PauseCanvas.SetActive(!pause);
+        Pause(!pause);
+        pause = !pause;
     }
 
     public void ResetCheckpoint()

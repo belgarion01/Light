@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlobalGameManager : MonoBehaviour
 {
     public static GlobalGameManager Instance;
-
+    [HideInInspector]
     public Vector3 RespawnPosition;
 
     private void Awake()
