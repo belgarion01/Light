@@ -163,5 +163,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053b100b9f02c2741abd2617bf7272f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX_Death: {fileID: 646225914033362872, guid: acdca8fff15717e42a9fc7e3929a15b8,
+  VFX_Death: {fileID: 7957365822942692393, guid: 93f6dc5577ff7054885d91a64fb4d804,
     type: 3}

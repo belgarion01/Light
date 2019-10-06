@@ -109,11 +109,20 @@ public class Boss : MonoBehaviour, IHitable
     }
 
     public void DoSomething() {
-        StartCoroutine(FallingBlocks());
+        int randomValue = Random.Range(1, 3);
+        switch (randomValue)
+        {
+            case 1: StartCoroutine(SprayShoot());
+                break;
+            case 2: StartCoroutine(FallingBlocks());
+                break;
+        }   
     }
 
+    public GameObject VFX_Wind;
     public void ShutDownTorches() {
         int index = Random.Range(0, Torches.Length - 1);
+        Instantiate(VFX_Wind, transform.position, Quaternion.identity);
         for (int i = 0; i < Torches.Length; i++)
         {
             if (i != index) {
