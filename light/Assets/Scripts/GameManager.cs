@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Pause(false);
         if (GlobalGameManager.Instance.GetActiveCheckpoint() == Vector3.zero)
         {
             GlobalGameManager.Instance.SetActiveCheckpoint(spawn.position);

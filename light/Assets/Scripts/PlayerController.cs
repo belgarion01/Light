@@ -40,7 +40,11 @@ public class PlayerController : MonoBehaviour
 
     public bool gizmos;
     public float invulnerableTime;
-    int health = 5;
+    int health = 3;
+
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
 
 
     private void Awake()
@@ -127,13 +131,13 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamageAction() {
         if (invulnerable) return;
-        Debug.Log("Toucher");
         StartCoroutine(TakeDamage(1));
     }
 
     IEnumerator TakeDamage(int damage)
     {
         health -= damage;
+        UpdateUI();
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
         invulnerable = true;
         foreach (SpriteRenderer sprite in sprites)
@@ -153,5 +157,16 @@ public class PlayerController : MonoBehaviour
 
     public void Die() {
         FindObjectOfType<GameManager>().ShowDeathMenu(true);
+    }
+
+    void UpdateUI() {
+        switch (health) {
+            case 2: life3.SetActive(false);
+                break;
+            case 1: life2.SetActive(false);
+                break;
+            case 0: life1.SetActive(false);
+                break;
+        }
     }
 }
