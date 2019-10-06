@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2d;
     public Animator anim;
     SpriteRenderer renderer;
+    public UnityEvent OnHit;
 
     float hAxis;
 
@@ -136,6 +137,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator TakeDamage(int damage)
     {
+        OnHit?.Invoke();
         health -= damage;
         UpdateUI();
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
