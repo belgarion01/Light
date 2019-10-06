@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void Launch() {
-        SceneManager.LoadScene(SceneManager.GetSceneByName("SceneFinale").buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void Quit() {
