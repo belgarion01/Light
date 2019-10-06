@@ -72,4 +72,8 @@ public class GameManager : MonoBehaviour
         if (value) Time.timeScale = 0f;
         else Time.timeScale = 1f;
     }
+
+    public void Quit() {
+        Application.Quit();
+    }
 }

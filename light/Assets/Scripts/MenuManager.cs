@@ -10,6 +10,11 @@ public class MenuManager : MonoBehaviour
     public GameObject CreditCam;
     private GameObject currentCam;
 
+    private void Start()
+    {
+        currentCam = MainCam;
+    }
+
     public void MoveToCam(GameObject cam) {
         cam.SetActive(true);
         currentCam.SetActive(false);
