@@ -31,8 +31,16 @@ public class Boss : MonoBehaviour, IHitable
     public Transform boxOrigin;
     public Vector3 boxSize;
 
+    private Animator anim;
+
     public void BeginBoss() {
         OnBossBegin?.Invoke();
+        active = true;
+    }
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,12 +54,13 @@ public class Boss : MonoBehaviour, IHitable
             currentTime += Time.deltaTime;
         }
         else {
-            DoSomething();
+            anim.SetTrigger("Shoot");
+            //DoSomething();
             currentTime = 0f;
         }
 
         if (Input.GetKeyDown(KeyCode.P)) {
-            Transparent(true);
+            StartCoroutine(FallingBlocks());
         }
 
         if (currentPhase == Phase.Phase1 && health < 40f) {
@@ -189,14 +198,18 @@ public class Boss : MonoBehaviour, IHitable
     }
 
     void ToPhase2() {
-        ShutDownTorches();
+        //ShutDownTorches();
+        anim.SetTrigger("Phase");
         currentPhase = Phase.Phase2;
+        currentTime = 0f;
     }
 
     void ToPhase3() {
-        ShutDownTorches();
+        //ShutDownTorches();
+        anim.SetTrigger("Phase");
         blockSpeed *= 1.5f;
         projSpeed *= 1.5f;
+        currentTime = 0f;
         currentPhase = Phase.Phase3;
     }
 }
